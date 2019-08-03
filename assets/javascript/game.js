@@ -4,7 +4,7 @@ var losses = 0;
 var guessesLeft = 9;
 var attemptList = [];
 
-var winsUser = document.getElementById("wins");
+var winsUser = document.getElementById("win");
 var lossesUser = document.getElementById("loss");
 var guessesLeftUser = document.getElementById("guess");
 var userAttemptList = document.getElementById("attempt");
@@ -38,7 +38,7 @@ var userGuess = event.key;
 
 }
 
-win.innerText = "Wins: " + wins;
-loss.innerText = "Losses: " + losses;
-guess.innerText = "Guesses Left: " + guessesLeft;
-attempt.innerText = "Your Guesses So Far: " + attemptList;
+winsUser.innerText = "Wins: " + wins;
+lossesUser.innerText = "Losses: " + losses;
+guessesLeftUser.innerText = "Guesses Left: " + guessesLeft;
+userAttemptList.innerText = "Your Guesses So Far: " + attemptList;
