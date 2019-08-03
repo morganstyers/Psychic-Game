@@ -15,27 +15,33 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(compGuess)
 
+
 document.onkeyup = function (event) {
 var userGuess = event.key;
 
-    guessesLeft--;
+    console.log(userGuess)
     attemptList.push(userGuess)
 
+    var restart = function() {
+        guessesLeft = 9;
+        attemptList = [];
+        compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
 
     if (userGuess === compGuess) {
         wins++;
         guessesLeft = 9;
         attemptList = []
-
+        restart()
     }
 
     else if (guessesLeft === 0) {
         guessesLeft = 9;
         attemptList = [];
         losses++;
-
+        restart()
     }
-
+    
 }
 
 winsUser.innerText = "Wins: " + wins;
