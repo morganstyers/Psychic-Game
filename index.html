@@ -9,30 +9,28 @@
 </head>
 
 <body>
-        <script type="text/javascript" src="assets/javascript/game.js"></script>
 
+    <h1 id="titleText">The Psychic Game</h1>
+    <p id="directionsText"> You have 9 tries to guess what letter I am thinking of.
+        <br>
+        Any letter in the alphabet A-Z. No special characters, no tricky magic.
+        <br>
+        If you manage to crack the code, you are awarded a point and the computer resets and you get to prove
+        yourself again.
+        <br>
+        If you do not guess correctly, your guess will be recorded and you may try again.
+        If you are unable to decipher the code in 9 tries, you have lost.
+        The code will reset.
+    </p>
 
     <div id="game">
-        <h1 id="titleText">The Psychic Game</h1>
-        <p id="directionsText"> You have 9 tries to guess what letter I am thinking of.
-            <br>
-            Any letter in the alphabet A-Z. No special characters, no tricky magic.
-            <br>
-            If you manage to crack the code, you are awarded a point and the computer resets and you get to prove
-            yourself again.
-            <br>
-            If you do not guess correctly, your guess will be recorded and you may try again.
-            If you are unable to decipher the code in 9 tries, you have lost.
-            The code will reset.
-        </p>
-               
-        <div id="stats">
-        <p id="winCount">Wins: 0</p>
-        <p id="lossCount">Losses: 0</p>
-        <p id="guessCount">Guesses Left: 9</p>
-        <p is="attempts">Your Guesses So Far: </p>
-        </div>
+        <p id="win"> Wins: </p>
+        <p id="loss"> Losses: </p>
+        <p id="guess">Guesses left: </p>
+        <p id="attempt"> Your Guesses So Far: </p>
     </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 
 </html>

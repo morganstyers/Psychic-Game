@@ -1,59 +1,44 @@
 // variables to keep track of points, guessed letters and tries remaining
 var wins = 0;
 var losses = 0;
-var guessesLeft = 9
+var guessesLeft = 9;
 var attemptList = [];
 
-
+var winsUser = document.getElementById("wins");
+var lossesUser = document.getElementById("loss");
+var guessesLeftUser = document.getElementById("guess");
+var userAttemptList = document.getElementById("attempt");
 
 //variables indicating array possibilities and restrictions
-
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var userInput = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-console.log(compGuess);
-
-
-
+var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+console.log(compGuess)
 
 document.onkeyup = function (event) {
-    var userGuess = event.key;
-    if (userInput.indexOf(guessesLeft) > -1) {
+var userGuess = event.key;
 
-   reset = function () {
-        gessesLeft = 10;
-        attemptList = [];
-    };
+    guessesLeft--;
+    attemptList.push(userGuess)
+
 
     if (userGuess === compGuess) {
-        alert('Hurrayyyyy');
         wins++;
-        document.getElementById("winCount").innerHTML = "Wins: " + wins;
-        GuessesLeft=9;
-        attemptList=[];
-        
-    }
-    if (userGuess != compGuess){
-        GuessesLeft--;
-        userInput.push(userGuess);
+        guessesLeft = 9;
+        attemptList = []
+
     }
 
-    if (guessesLeft === 0) {
-        alert('nooooooooooooo');
+    else if (guessesLeft === 0) {
+        guessesLeft = 9;
+        attemptList = [];
         losses++;
-        attemptList=[];
-    };
 
+    }
 
-
-var html= 
-       "<p> Wins: "+ wins+ "</p>" +
-        "<p>Losses: "+losses+ "</p>" +
-        "<p>Guesses Left: "+ guessesLeft + "</p>"+
-        "<p>Your Guesses So Far: "+ userInput.join(",")+"</p>"
-
-        document.getElementById("stats").innerHTML = html;
-
-};
 }
+
+win.innerText = "Wins: " + wins;
+loss.innerText = "Losses: " + losses;
+guess.innerText = "Guesses Left: " + guessesLeft;
+attempt.innerText = "Your Guesses So Far: " + attemptList;
