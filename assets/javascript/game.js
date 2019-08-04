@@ -18,17 +18,16 @@ console.log(compGuess)
 
 document.onkeyup = function (event) {
 var userGuess = event.key;
+attemptList.push(userGuess);
 
-
-    attemptList.push(userGuess);
+restart = function() {
+    guessesLeft = 9;
+    attemptList = [];
+    wins=0;
+    losses=0;
+    compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+}
     
-    
-    restart = function() {
-        guessesLeft = 9;
-        attemptList = [];
-        compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-    }
-
     if (userGuess === compGuess) {
         wins++;
         guessesLeft = 9;
