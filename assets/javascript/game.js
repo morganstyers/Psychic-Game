@@ -44,5 +44,5 @@ restart = function() {
     winsUser.innerText = "Wins: " + wins;
     lossesUser.innerText = "Losses: " + losses;
     guessesLeftUser.innerText = "Guesses Left: " + guessesLeft;
-    userAttemptList.innerText = "Your Guesses So Far: " + attemptList.join(userGuess);
+    userAttemptList.innerText = "Your Guesses So Far: " + attemptList.join(",");
 }
