@@ -31,11 +31,14 @@ restart = function() {
     if (userGuess === compGuess) {
         wins++;
         guessesLeft = 9;
+        alert("holy crap you guessed it! youre a wizard!!!!!");
+
     }
     else {
         guessesLeft--;
         losses++;
     }
+
     if (guessesLeft === 0) {
         alert("Booo! You are not psychic! You are full of lies!!")
         restart();
@@ -44,5 +47,5 @@ restart = function() {
     winsUser.innerText = "Wins: " + wins;
     lossesUser.innerText = "Losses: " + losses;
     guessesLeftUser.innerText = "Guesses Left: " + guessesLeft;
-    userAttemptList.innerText = "Your Guesses So Far: " + attemptList.join(",");
+    userAttemptList.innerText = "Your Guesses So Far: " + attemptList.join(" , ");
 }
