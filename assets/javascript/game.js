@@ -19,10 +19,11 @@ console.log(compGuess)
 document.onkeyup = function (event) {
 var userGuess = event.key;
 
-    console.log(userGuess)
-    attemptList.push(userGuess)
 
-    var restart = function() {
+    attemptList.push(userGuess);
+    
+    
+    restart = function() {
         guessesLeft = 9;
         attemptList = [];
         compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
@@ -31,20 +32,17 @@ var userGuess = event.key;
     if (userGuess === compGuess) {
         wins++;
         guessesLeft = 9;
-        attemptList = []
-        restart()
     }
-
-    else if (guessesLeft === 0) {
-        guessesLeft = 9;
-        attemptList = [];
+    else {
+        guessesLeft--;
         losses++;
-        restart()
     }
-    
+    if (guessesLeft === 0) {
+        alert("Booo! You are not psychic! You are full of lies!!")
+    };
+  
+    winsUser.innerText = "Wins: " + wins;
+    lossesUser.innerText = "Losses: " + losses;
+    guessesLeftUser.innerText = "Guesses Left: " + guessesLeft;
+    userAttemptList.innerText = "Your Guesses So Far: " + attemptList.join(userGuess);
 }
-
-winsUser.innerText = "Wins: " + wins;
-lossesUser.innerText = "Losses: " + losses;
-guessesLeftUser.innerText = "Guesses Left: " + guessesLeft;
-userAttemptList.innerText = "Your Guesses So Far: " + attemptList;
