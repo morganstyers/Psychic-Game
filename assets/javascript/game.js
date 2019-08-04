@@ -39,6 +39,7 @@ var userGuess = event.key;
     }
     if (guessesLeft === 0) {
         alert("Booo! You are not psychic! You are full of lies!!")
+        restart();
     };
   
     winsUser.innerText = "Wins: " + wins;
