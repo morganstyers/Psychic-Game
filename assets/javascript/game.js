@@ -31,7 +31,7 @@ restart = function() {
     if (userGuess === compGuess) {
         wins++;
         guessesLeft = 9;
-        alert("holy crap you guessed it! youre a wizard!!!!!");
+        alert("holy crap you guessed it! you're a wizard!!!!!");
 
     }
     else {
