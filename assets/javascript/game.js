@@ -15,25 +15,24 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(compGuess)
 
+restart = function() {
+    guessesLeft = 9;
+    compGuess = alphabet[Math.floor(Math.random() * alphabet.length)-1];
+}
 
 document.onkeyup = function (event) {
 var userGuess = event.key;
 attemptList.push(userGuess);
 
-restart = function() {
-    guessesLeft = 9;
-    attemptList = [];
-    wins=0;
-    losses=0;
-    compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-}
+
     
     if (userGuess === compGuess) {
-        wins++;
-        guessesLeft = 9;
         alert("holy crap you guessed it! you're a wizard!!!!!");
-
+        restart();
+        console.log(compGuess)
+        wins++;
     }
+
     else {
         guessesLeft--;
         losses++;

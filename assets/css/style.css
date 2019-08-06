@@ -1,7 +1,4 @@
 
-
-
-/* Place text in the middle of the image */
 .hero-text {
   text-align: center;
   position: absolute;
@@ -11,11 +8,12 @@
   color:black;
 }
 h1{
+ 
     font-family: 'Homemade Apple', cursive;
 }
 
 .lead{
-    margin-top: 30px;
+    margin-top:15px;
 }
 #game{ 
     padding-top:10px;
