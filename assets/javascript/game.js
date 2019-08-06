@@ -29,10 +29,10 @@ attemptList.push(userGuess);
     if (userGuess === compGuess) {
         alert("holy crap you guessed it! you're a wizard!!!!!");
         restart();
-        console.log(compGuess)
+        console.log(compGuess);
         wins++;
+        guessesLeft--;
     }
-
     else {
         guessesLeft--;
         losses++;
