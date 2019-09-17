@@ -1,5 +1,7 @@
 # Psychic-Game
 
+https://morganstyers.github.io/Psychic-Game/
+
 In this assignment, you'll create one a computer game called Psychic. These apps will run in the browser, and feature dynamically updated HTML powered by your JavaScript code.
 
 ##Before You Begin
